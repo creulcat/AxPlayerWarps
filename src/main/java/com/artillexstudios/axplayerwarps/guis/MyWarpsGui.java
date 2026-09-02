@@ -221,10 +221,10 @@ public class MyWarpsGui extends PaginatedGuiFrame {
                     gui.addItem(axGuiItem);
                 }
 
-                Scheduler.get().run(scheduledTask -> {
+                Scheduler.get().run(player, task -> {
                     updateTitle();
                     future.complete(null);
-                });
+                }, () -> {});
             });
         });
 

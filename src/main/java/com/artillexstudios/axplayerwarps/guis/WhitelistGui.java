@@ -148,9 +148,9 @@ public class WhitelistGui extends PaginatedGuiFrame {
                 }));
             }
 
-            Scheduler.get().run(scheduledTask -> {
+            Scheduler.get().run(player, task -> {
                 future.complete(null);
-            });
+            }, () -> {});
         });
 
         return future;
